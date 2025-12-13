@@ -57,7 +57,7 @@ A beautiful, dark-themed Pomodoro timer app built with Flutter. Features a circu
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/pomodoro.git
+   git clone https://github.com/mefedursun/pomodoro.git
    cd pomodoro
    ```
 
