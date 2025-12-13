@@ -4,7 +4,7 @@ A beautiful, dark-themed Pomodoro timer app built with Flutter. Features a circu
 
 ## 🌐 Live Demo
 
-**[Try it in your browser!](https://your-username.github.io/pomodoro/)** (Chrome recommended)
+**[Try it in your browser!](https://mefedursun.github.io/pomodoro/)** (Chrome recommended)
 
 ## ✨ Features
 
