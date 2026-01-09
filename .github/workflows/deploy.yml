@@ -6,10 +6,14 @@ on:
       - main
   workflow_dispatch:
 
+# Bu kısım botun gh-pages dalına yazabilmesi için gereklidir
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,11 +28,16 @@ jobs:
         run: flutter pub get
 
       - name: Build web
+        # Repository adınızın 'pomodoro' olduğundan emin olun.
+        # Eğer farklıysa "/pomodoro/" kısmını "/repo-adiniz/" olarak değiştirin.
         run: flutter build web --release --base-href "/pomodoro/"
+
+      # GitHub Pages'in dosyaları düzgün okuması için bu dosya şarttır
+      - name: Create .nojekyll
+        run: touch build/web/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-
