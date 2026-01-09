@@ -6,7 +6,6 @@ on:
       - main
   workflow_dispatch:
 
-# Bu kısım botun gh-pages dalına yazabilmesi için gereklidir
 permissions:
   contents: write
 
@@ -28,11 +27,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        # Repository adınızın 'pomodoro' olduğundan emin olun.
-        # Eğer farklıysa "/pomodoro/" kısmını "/repo-adiniz/" olarak değiştirin.
         run: flutter build web --release --base-href "/pomodoro/"
-
-      # GitHub Pages'in dosyaları düzgün okuması için bu dosya şarttır
       - name: Create .nojekyll
         run: touch build/web/.nojekyll
 
